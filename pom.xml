@@ -38,22 +38,10 @@
             <artifactId>core</artifactId>
             <version>${cdk.version}</version>
         </dependency>
-
-        <!-- Respective AWS Construct Libraries -->
         <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>sns</artifactId>
-            <version>${cdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>sns-subscriptions</artifactId>
-            <version>${cdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>sqs</artifactId>
-            <version>${cdk.version}</version>
+        	<groupId>software.amazon.awscdk</groupId>
+        	<artifactId>lambda</artifactId>
+        	<version>${cdk.version}</version>
         </dependency>
 
         <dependency>
@@ -74,5 +62,6 @@
             <version>3.18.1</version>
             <scope>test</scope>
         </dependency>
+        
     </dependencies>
 </project>
