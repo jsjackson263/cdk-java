@@ -1,0 +1,6 @@
+{
+  "body": "This is the body of your lambda response",
+  "resource": "/{proxy+}",
+  "path": "/path/to/resource",
+  "httpMethod": "POST"
+}

@@ -3,6 +3,8 @@ package com.myorg;
 import software.amazon.awscdk.core.Construct;
 import software.amazon.awscdk.core.Stack;
 import software.amazon.awscdk.core.StackProps;
+import software.amazon.awscdk.services.apigateway.LambdaRestApi;
+import software.amazon.awscdk.services.apigateway.RestApi;
 import software.amazon.awscdk.services.lambda.Code;
 import software.amazon.awscdk.services.lambda.Function;
 import software.amazon.awscdk.services.lambda.Runtime;
@@ -22,6 +24,17 @@ public class CdkJavaStack extends Stack {
         		.handler("hello.handler")      //file name is "hello", function name is "handler"
         		.build();
         		
+        //Defines the hitcounter resource
+        final HitCounter helloWithCounter = new HitCounter(this, "HelloHitCounter", HitCounterProps.builder()
+        		.downstream(hello)
+        		.build());
+        
+        
+        //Defines an API Gateway REST API resource backed by the "hello" lambda function
+        LambdaRestApi.Builder.create(this,  "EndPoint")
+        .handler(helloWithCounter.getHandler())
+        .build();
         
     }
 }
+
