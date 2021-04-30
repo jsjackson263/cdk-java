@@ -38,8 +38,11 @@ public class HitCounter extends Construct {
 				.environment(environment)
 				.build();
 		
-		//Grant the lambda function read/write permissions to our table
+		//Grant the lambda function read/write permissions to the dynamodb table
 		this.table.grantReadWriteData(this.handler);
+		
+		//Grant the lambda function invoke permissions to the downstream function
+		props.getDownStream().grantInvoke(this.handler);
 		
 	}
 	
