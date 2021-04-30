@@ -1,12 +1,11 @@
 package com.myorg;
 
-import com.github.eladb.dynamotableviewer.TableViewer;
+//import com.github.eladb.dynamotableviewer.TableViewer;
 
 import software.amazon.awscdk.core.Construct;
 import software.amazon.awscdk.core.Stack;
 import software.amazon.awscdk.core.StackProps;
 import software.amazon.awscdk.services.apigateway.LambdaRestApi;
-import software.amazon.awscdk.services.apigateway.RestApi;
 import software.amazon.awscdk.services.lambda.Code;
 import software.amazon.awscdk.services.lambda.Function;
 import software.amazon.awscdk.services.lambda.Runtime;
@@ -38,10 +37,10 @@ public class CdkJavaStack extends Stack {
         .build();
         
         //Defines a viewer for the HitCounts table
-        TableViewer.Builder.create(this, "ViewHitCount")
+        /*TableViewer.Builder.create(this, "ViewHitCount")
         .title("Hello Hits")
         .table(helloWithCounter.getTable())
-        .build();
+        .build();*/
         
     }
 }
